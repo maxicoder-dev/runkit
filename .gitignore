@@ -1,0 +1,17 @@
+# Backup & temp files
+*~
+*.swp
+*.bak
+*.log
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Sensitive env files
+.env
+.env.*
