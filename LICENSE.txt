@@ -1,0 +1,9 @@
+🔒 MaxiCoder Private License
+
+This repository is part of the paid Udemy course by MaxiCoder (https://maxicoder.dev).
+
+All files, scripts, and content are licensed for personal use only by enrolled students of the course.
+
+Redistribution, resale, or public sharing of any part of this repository is strictly prohibited without explicit written permission.
+
+© MaxiCoder, 2025. All rights reserved.
