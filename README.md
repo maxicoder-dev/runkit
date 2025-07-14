@@ -21,3 +21,14 @@ This repo includes all the scripts and config files used throughout the course:
 - `assets/` – screenshots and extra resources (if any)
 
 ---
+👨‍💻 Author
+
+Created by MaxiCoder
+Course & documentation: https://maxicoder.dev
+
+---
+
+📜 License
+
+This repository is part of a paid course. All content is protected.
+See LICENSE.txt for terms of use.
