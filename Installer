@@ -70,6 +70,27 @@ done
 stage "Updating packages and installing dependencies"
 progressbar "Updating system"
 DEBIAN_FRONTEND=noninteractive apt-get update -y -qq
+stage "Updating packages and installing dependencies"
+progressbar "Updating system"
+DEBIAN_FRONTEND=noninteractive apt-get update -y -qq
+
+# --- Add Docker repository if not exists and install Docker Compose plugin ---
+if ! apt-cache policy docker-compose-plugin 2>/dev/null | grep -q download.docker.com; then
+    echo -e "${YELLOW}Adding official Docker repository for latest docker-compose-plugin...${NC}"
+    apt-get install -y ca-certificates curl gnupg lsb-release
+    install -m 0755 -d /etc/apt/keyrings
+    if [[ ! -f /etc/apt/keyrings/docker.gpg ]]; then
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    fi
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) stable" | \
+      tee /etc/apt/sources.list.d/docker.list > /dev/null
+    apt-get update
+fi
+
+progressbar "Installing core packages"
+DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ca-certificates curl gnupg lsb-release git nginx docker.io docker-compose-plugin jq
 progressbar "Installing core packages"
 DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ca-certificates curl gnupg lsb-release git nginx docker.io docker-compose-plugin jq
 
