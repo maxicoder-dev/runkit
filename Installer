@@ -286,24 +286,19 @@ Panel URL (via Cloudflare): https://$DOMAIN/dashboard
 Admin login: $ADMIN_USER
 Admin password: $ADMIN_PASS
 
-Reality privateKey: $PRIVATE_KEY
-Reality publicKey:  $PUBLIC_KEY
-Reality shortId:    $SHORT_ID
-
 EOF
 
 chmod 600 "$INFO_FILE"
 
-echo -e "${GREEN}🎉 Marzban is installed and ready!${NC}\n"
-echo -e "🌍 ${CYAN}Panel (via Cloudflare):${NC} https://$DOMAIN/dashboard"
+echo -e "${GREEN}🎉 Your VPN is installed and ready!${NC}\n"
+echo -e "🌍 ${CYAN}Panel:${NC} https://$DOMAIN/dashboard"
 echo -e "👤 ${CYAN}Admin username:${NC} $ADMIN_USER"
 echo -e "🔑 ${CYAN}Admin password:${NC} $ADMIN_PASS\n"
-echo -e "🗝️ ${CYAN}Reality privateKey:${NC} $PRIVATE_KEY"
-echo -e "🗝️ ${CYAN}Reality publicKey:${NC} $PUBLIC_KEY"
-echo -e "🆔 ${CYAN}Reality shortId:${NC} $SHORT_ID\n"
+
 
 echo -e "${YELLOW}All installation details saved to: ${CYAN}$INFO_FILE${NC}"
 echo -e "${GREEN}This file is protected and can only be read by the superuser (root).${NC}\n"
+echo -e "${CYAN}To view your panel access details at any time, run:${NC} cat /root/vpn-install-info.txt\n"
 echo -e "${YELLOW}⚡️ Point your DNS (A record) to $IP and enable the Cloudflare proxy (orange cloud)."
 echo -e "🔒 In Cloudflare, set SSL/TLS to Flexible."
 echo -e "${BLUE}Script developed by MaxiCoder for Udemy${NC}"
